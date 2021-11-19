@@ -1,7 +1,8 @@
 # dataset settings
-ann_type = 'bast_eval'  # * change accordingly
+ann_type = 'bast_base'  # * change accordingly
 num_classes = 9 if ann_type == 'bast_base' else 42
 
+# model settings
 model = dict(
     type='Recognizer3D',
     backbone=dict(
@@ -28,6 +29,7 @@ model = dict(
     train_cfg=dict(),
     test_cfg=dict(average_clips='prob'))
 
+# dataset settings
 dataset_type = 'PoseDataset'
 ann_file_train = f'data/skeleton/{ann_type}/bast_train.pkl'
 ann_file_val = f'data/skeleton/{ann_type}/bast_val.pkl'
@@ -36,8 +38,6 @@ left_kp = [1, 3, 5, 7, 9, 11, 13, 15]
 right_kp = [2, 4, 6, 8, 10, 12, 14, 16]
 
 train_pipeline = [
-    # divide the clip into 48 segments of equal length and randomly
-    # select one frame from each segment until you have sampled 48 frames
     dict(type='UniformSampleFrames', clip_len=48),
     dict(type='PoseDecode'),
     dict(type='PoseCompact', hw_ratio=1., allow_imgpad=True),
@@ -72,7 +72,6 @@ val_pipeline = [
     dict(type='ToTensor', keys=['imgs'])
 ]
 test_pipeline = [
-    # num_clips=10 -> can test up to 480 frames per clip
     dict(
         type='UniformSampleFrames', clip_len=48, num_clips=10, test_mode=True),
     dict(type='PoseDecode'),
@@ -93,14 +92,9 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs'])
 ]
 data = dict(
-    videos_per_gpu=8,
+    videos_per_gpu=16,
     workers_per_gpu=1,
-    test_dataloader=dict(
-        videos_per_gpu=1,
-        workers_per_gpu=1),
-    val_dataloader=dict(
-        videos_per_gpu=1,
-        workers_per_gpu=1),
+    test_dataloader=dict(videos_per_gpu=1),
     train=dict(
         type=dataset_type,
         ann_file=ann_file_train,
@@ -119,14 +113,14 @@ data = dict(
 
 # optimizer
 optimizer = dict(
-    type='SGD', lr=0.01875, momentum=0.9,
+    type='SGD', lr=0.1, momentum=0.9,
     weight_decay=0.0003)  # this lr is used for 8 gpus
 optimizer_config = dict(grad_clip=dict(max_norm=40, norm_type=2))
 
 # learning policy
 lr_config = dict(policy='CosineAnnealing', by_epoch=False, min_lr=0)
 total_epochs = 240
-checkpoint_config = dict(interval=20)
+checkpoint_config = dict(interval=10)
 workflow = [('train', 10)]
 evaluation = dict(
     interval=5,
@@ -142,7 +136,8 @@ log_config = dict(
 
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-load_from = None #('https://download.openmmlab.com/mmaction/skeleton/posec3d/'
-#            'slowonly_r50_u48_240e_gym_keypoint/slowonly_r50_u48_240e_gym_keypoint-b07a98a0.pth')
+load_from = ('https://download.openmmlab.com/mmaction/skeleton/posec3d/'
+            'slowonly_r50_u48_240e_ntu120_xsub_keypoint/'
+            'slowonly_r50_u48_240e_ntu120_xsub_keypoint-6736b03f.pth')
 resume_from = None
 find_unused_parameters = False

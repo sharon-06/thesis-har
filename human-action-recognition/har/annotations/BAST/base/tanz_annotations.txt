@@ -1,0 +1,9 @@
+0 walk
+1 run
+2 jump
+3 stamp
+4 contract-expand
+5 tiptoe
+6 swing-upper-body
+7 rotate
+8 fall

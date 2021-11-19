@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  mc-read:
+    image: minio/mc
+    deploy:
+      placement:
+        constraints: [node.hostname == motionbank-compute-00]
+    secrets:
+      - minio-credentials
+    volumes:
+      - data-transfer-auto:/home/exchange
+    entrypoint: /bin/bash
+    command: >
+        -c "cd home
+        && cp /run/secrets/minio-credentials creds
+        && chmod 600 creds
+        && cat creds | mc alias set vort https://assets.vortanz.ai --api S3v2
+        && mc mirror vort/har-auto-in/ exchange/read --overwrite"
+
+  mc-write:
+    image: minio/mc
+    deploy:
+      placement:
+        constraints: [node.hostname == motionbank-compute-00]
+    secrets:
+      - minio-credentials
+    volumes:
+      - data-transfer-auto:/home/exchange
+    entrypoint: /bin/bash
+    command: >
+        -c "cd home
+        && cp /run/secrets/minio-credentials creds
+        && chmod 600 creds
+        && cat creds | mc alias set vort https://assets.vortanz.ai --api S3v2
+        && mc mirror exchange/write vort/har-auto-out/ --overwrite --remove --watch"
+secrets:
+  minio-credentials:
+    external: true
+volumes:
+  data-transfer-auto:
+    name: data-transfer-auto

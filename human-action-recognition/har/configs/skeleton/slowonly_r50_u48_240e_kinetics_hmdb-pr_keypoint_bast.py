@@ -25,7 +25,7 @@ model = dict(
         in_channels=512,
         num_classes=num_classes,
         spatial_type='avg',
-        dropout_ratio=0.6),
+        dropout_ratio=0.7),
     train_cfg=dict(),
     test_cfg=dict(average_clips='prob'))
 
@@ -137,7 +137,7 @@ log_config = dict(
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
 load_from = ('https://download.openmmlab.com/mmaction/skeleton/posec3d/'
-            'slowonly_kinetics400_pretrained_r50_u48_120e_ucf101_split1_keypoint/'
-            'slowonly_kinetics400_pretrained_r50_u48_120e_ucf101_split1_keypoint-cae8aa4a.pth')
+            'slowonly_kinetics400_pretrained_r50_u48_120e_hmdb51_split1_keypoint/'
+            'slowonly_kinetics400_pretrained_r50_u48_120e_hmdb51_split1_keypoint-76ffdd8b.pth')
 resume_from = None
 find_unused_parameters = False

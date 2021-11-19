@@ -25,7 +25,7 @@ model = dict(
         in_channels=512,
         num_classes=num_classes,
         spatial_type='avg',
-        dropout_ratio=0.6),
+        dropout_ratio=0.5),
     train_cfg=dict(),
     test_cfg=dict(average_clips='prob'))
 
@@ -92,7 +92,7 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs'])
 ]
 data = dict(
-    videos_per_gpu=6,
+    videos_per_gpu=8,
     workers_per_gpu=1,
     test_dataloader=dict(videos_per_gpu=1),
     train=dict(
@@ -113,13 +113,13 @@ data = dict(
 
 # optimizer
 optimizer = dict(
-    type='SGD', lr=0.0094, momentum=0.9,
+    type='SGD', lr=0.0125, momentum=0.9,
     weight_decay=0.0003)  # this lr is used for 8 gpus
 optimizer_config = dict(grad_clip=dict(max_norm=40, norm_type=2))
 
 # learning policy
 lr_config = dict(policy='CosineAnnealing', by_epoch=False, min_lr=0)
-total_epochs = 280
+total_epochs = 240
 checkpoint_config = dict(interval=10)
 workflow = [('train', 10)]
 evaluation = dict(

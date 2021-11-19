@@ -16,12 +16,12 @@ model = dict(
 # dataset settings
 dataset_type = 'VideoDataset'  # can be video | frames | custom
 omnisource = False  # The flag indicates using joint training: False because we are fine tuning
-data_root_train = '/home/rejnald/projects/wizai/thesis/thesis-har/'
-data_root_val = data_root_train
+data_root = '/mmaction2/'
+data_root_val = data_root
 data_root_test = ''
 ann_file_train = f'data/{ann_type}/tanz_train_list_videos.txt'
 ann_file_val = f'data/{ann_type}/tanz_val_list_videos.txt'
-ann_file_test = f'data/{ann_type}/tanz_test_list_videos.txt'
+ann_file_test = f'/mnt/data_transfer/read/to_process_test/{ann_type}_test_list_videos.txt'
 
 # Pre-processing pipelines
 img_norm_cfg = dict(
@@ -85,7 +85,7 @@ data = dict(
     train=dict(
         type=dataset_type,
         ann_file=ann_file_train,
-        data_prefix=data_root_train,
+        data_prefix=data_root,
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,

@@ -1,5 +1,5 @@
 # dataset settings
-ann_type = 'bast_base'  # * change accordingly
+ann_type = 'bast_eval'  # * change accordingly
 num_classes = 9 if ann_type == 'bast_base' else 42
 
 # model settings
@@ -92,7 +92,7 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs'])
 ]
 data = dict(
-    videos_per_gpu=16,
+    videos_per_gpu=8,
     workers_per_gpu=1,
     test_dataloader=dict(videos_per_gpu=1),
     train=dict(
@@ -113,7 +113,7 @@ data = dict(
 
 # optimizer
 optimizer = dict(
-    type='SGD', lr=0.1, momentum=0.9,
+    type='SGD', lr=0.0125, momentum=0.9,
     weight_decay=0.0003)  # this lr is used for 8 gpus
 optimizer_config = dict(grad_clip=dict(max_norm=40, norm_type=2))
 

@@ -1,5 +1,5 @@
 # dataset settings
-ann_type = 'bast_eval'  # * change accordingly
+ann_type = 'bast_base'  # * change accordingly
 num_classes = 9 if ann_type == 'bast_base' else 42
 
 model = dict(
@@ -24,7 +24,7 @@ model = dict(
         in_channels=512,
         num_classes=num_classes,
         spatial_type='avg',
-        dropout_ratio=0.5),
+        dropout_ratio=0.7),
     train_cfg=dict(),
     test_cfg=dict(average_clips='prob'))
 
@@ -93,7 +93,7 @@ test_pipeline = [
     dict(type='ToTensor', keys=['imgs'])
 ]
 data = dict(
-    videos_per_gpu=8,
+    videos_per_gpu=16,
     workers_per_gpu=1,
     test_dataloader=dict(
         videos_per_gpu=1,
@@ -119,7 +119,7 @@ data = dict(
 
 # optimizer
 optimizer = dict(
-    type='SGD', lr=0.01875, momentum=0.9,
+    type='SGD', lr=0.1, momentum=0.9,
     weight_decay=0.0003)  # this lr is used for 8 gpus
 optimizer_config = dict(grad_clip=dict(max_norm=40, norm_type=2))
 
@@ -142,7 +142,7 @@ log_config = dict(
 
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-load_from = None #('https://download.openmmlab.com/mmaction/skeleton/posec3d/'
-#            'slowonly_r50_u48_240e_gym_keypoint/slowonly_r50_u48_240e_gym_keypoint-b07a98a0.pth')
+load_from = ('https://download.openmmlab.com/mmaction/skeleton/posec3d/'
+            'slowonly_r50_u48_240e_gym_keypoint/slowonly_r50_u48_240e_gym_keypoint-b07a98a0.pth')
 resume_from = None
 find_unused_parameters = False

@@ -1,0 +1,12 @@
+{
+    "walk": 523,
+    "run": 457,
+    "jump": 455,
+    "stamp": 279,
+    "contract_expand": 495,
+    "tiptoe": 687,
+    "swing_upper_body": 472,
+    "rotate": 452,
+    "fall": 74,
+    "total": 3894
+}

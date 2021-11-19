@@ -1,0 +1,9 @@
+0 Gehen
+1 Laufen
+2 Springen
+3 Stampfen
+4 Zusammenziehen-Ausdehnen
+5 Ballenstand
+6 Schwuenge
+7 Drehen
+8 Fallen

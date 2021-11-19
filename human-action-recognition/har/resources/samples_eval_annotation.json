@@ -1,0 +1,166 @@
+[
+    {
+        "Annotation": "FAL-flow",
+        "Description": "movement flow while falling. Task instruction: \"..and fall to the ground.\"",
+        "1:sits/liesdown": 0.57,
+        "2:fallsinsteps": 0.03,
+        "3:freefalling": 0.24,
+        "?": 0.01
+    },
+    {
+        "Annotation": "STA-strength",
+        "Description": "the way strength is used while putting feet on the floor during stamping. Instruction: \"Please stamp as hard as you can.\"",
+        "1:nostrength": 0.22,
+        "2:littlestrength": 0.25,
+        "3:mediumstrength": 0.27,
+        "4:maximumstrength": 0.1,
+        "?": 0.01
+    },
+    {
+        "Annotation": "SWI-headintegration",
+        "Description": "the head involvement while swinging. Instruction: \"Please swing with your upper body.\"",
+        "1:desintegrated": 0.45,
+        "2:integrated": 0.38,
+        "?": 0.01
+    },
+    {
+        "Annotation": "FAL-endposition",
+        "Description": "end position after falling. Task instruction: \" .. and fall to the ground.\"",
+        "1:sitting": 0.6,
+        "2:>sitting<lying": 0.01,
+        "3:lying": 0.22,
+        "?": 0.01
+    },
+    {
+        "Annotation": "SPI-acceleration",
+        "Description": "increase of movement speed while spinning. Instruction: \"Please spin around.\"\t\t\t\t\t",
+        "1:noacceleration": 0.34,
+        "2:acceleration": 0.48,
+        "?": 0.02
+    },
+    {
+        "Annotation": "EXP-kinesphere",
+        "Description": "the space that can be reached by a person\u00b4s  spreading out their limbs without changing their position during contracting. Instruction: \"Contract and expand several times.\"",
+        "1:narrow": 0.02,
+        "2:narrow>wide": 0.07,
+        "3:wide>narrow": 0.17,
+        "4:wide": 0.54,
+        "?": 0.05
+    },
+    {
+        "Annotation": "JUM-emphasis",
+        "Description": "emphasis on one of the movement directions. Instruction: \"Please jump.\"",
+        "1:upwards": 0.75,
+        "2:downwards": 0.0,
+        "3:forward": 0.08,
+        "4:sidewards": 0.0,
+        "?": 0.03
+    },
+    {
+        "Annotation": "JUM-timeinair",
+        "Description": "duration of one jumping phase while there is no floor contact. Instruction: \"Please jump.\"",
+        "1:long": 0.25,
+        "2:short": 0.58,
+        "?": 0.02
+    },
+    {
+        "Annotation": "COEX-emphasis",
+        "Description": "the emphasis of one movement against another one, e.g. with usage of extreme movement qualities (strong effort, whole body involvement, particularly narrow or wide kinesphere, particularly deep or high level,..) while contracting and expanding. Instruction: \" Contract and expand several times.\"",
+        "1:contracting": 0.15,
+        "2:expanding": 0.33,
+        "3:noemphasis": 0.31,
+        "?": 0.05
+    },
+    {
+        "Annotation": "SWI-bodyinvolvement",
+        "Description": "the extent of the body involvement while swinging. Instruction: \"Please swing with your upper body.\"",
+        "1:isolated": 0.05,
+        "2:isolated>wholebody": 0.68,
+        "3:wholebody>isolated": 0.08,
+        "4:wholebody": 0.03,
+        "?": 0.01
+    },
+    {
+        "Annotation": "SPI-orientation",
+        "Description": "the continuity of the spinning movements of a person. Instruction: \"Please spin around.\"",
+        "1:fixates": 0.14,
+        "2:doesnotfixate": 0.69,
+        "?": 0.02
+    },
+    {
+        "Annotation": "CON-kinesphere",
+        "Description": "the space that can be reached by a person\u00b4s  spreading out their limbs without changing their position during contracting. Instruction: \"Contract and expand several times.\"",
+        "1:narrow": 0.47,
+        "2:narrow>wide": 0.25,
+        "3:wide>narrow": 0.04,
+        "4:wide": 0.01,
+        "?": 0.08
+    },
+    {
+        "Annotation": "STA-bodyinvolvement",
+        "Description": "the extent of body involvement while stamping. Instruction: \"Please stamp as hard as you can.\"",
+        "1:isolated": 0.55,
+        "2:wholebody": 0.28,
+        "?": 0.01
+    },
+    {
+        "Annotation": "SWI-flow",
+        "Description": "innervation of agonistic and antagonistic muscle group while swinging. Instruction: \"Please swing with your upper body.\"",
+        "1:bound": 0.22,
+        "2:bound>free": 0.2,
+        "3:free>bound": 0.23,
+        "4:free": 0.2,
+        "?": 0.01
+    },
+    {
+        "Annotation": "TOE-balance",
+        "Description": "the relation between the focal point and the fulcrum of the body. Instruction: \"Please stop and elevate on the balls of your feet and try to stand there....Now try to stay on the ball of one foot and move the other leg away from the floor.\"",
+        "1:unstable": 0.1,
+        "2:unstable>stable": 0.06,
+        "3:stable>unstable": 0.38,
+        "4:stable": 0.19,
+        "?": 0.13
+    },
+    {
+        "Annotation": "COEX-headintegration",
+        "Description": "the head involvement while contracting and expanding. Instruction: \"Contract and expand several times.\"",
+        "1:desintegrated": 0.33,
+        "2:integrated": 0.46,
+        "?": 0.05
+    },
+    {
+        "Annotation": "SPI-continuity",
+        "Description": "the level of continuity while spinning movement. Instruction: \"Please spin around.\"\n",
+        "1:onebyone": 0.25,
+        "2:discontinued": 0.39,
+        "3:continued": 0.18,
+        "?": 0.02
+    },
+    {
+        "Annotation": "WAL-floorpattern",
+        "Description": "the patterns on the floor that result from the movement paths as a thought traces",
+        "1:straight": 0.0,
+        "2:straight>curved": 0.16,
+        "3:curved>straight": 0.43,
+        "4:curved": 0.22,
+        "?": 0.05
+    },
+    {
+        "Annotation": "RUN-floorpattern",
+        "Description": "",
+        "3:curved>straight": 0.43,
+        "2:straight>curved": 0.12,
+        "1:straight": 0.0,
+        "4:curved": 0.25,
+        "?": 0.06
+    },
+    {
+        "Annotation": "SPI-flow",
+        "Description": "",
+        "1:bound": 0.09,
+        "2:bound>free": 0.22,
+        "3:free>bound": 0.27,
+        "4:free": 0.25,
+        "?": 0.02
+    }
+]

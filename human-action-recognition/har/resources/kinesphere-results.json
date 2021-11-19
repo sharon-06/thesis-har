@@ -1,0 +1,36 @@
+{
+    "narrow-kinesphere": {
+        "jump-time-long": 13,
+        "stamp-strength-none": 2,
+        "stamp-strength-little": 7,
+        "stamp-body-whole": 4,
+        "stamp-body-isolated": 12,
+        "jump-emphasis-upward": 9,
+        "jump-emphasis-forward": 6,
+        "con-exp-no-emphasis": 4,
+        "walk-straight-more": 4
+    },
+    "middle-kinesphere": {
+        "jump-time-long": 7,
+        "stamp-strength-none": 5,
+        "stamp-strength-little": 2,
+        "stamp-body-whole": 1,
+        "stamp-body-isolated": 2,
+        "jump-emphasis-upward": 3,
+        "jump-emphasis-forward": 5,
+        "con-exp-no-emphasis": 7,
+        "walk-straight-more": 6
+    },
+    "wide-kinesphere": {
+        "jump-time-long": 6,
+        "stamp-strength-none": 9,
+        "stamp-body-whole": 4,
+        "stamp-body-isolated": 6,
+        "stamp-strength-little": 3,
+        "jump-emphasis-upward": 5,
+        "jump-emphasis-forward": 4,
+        "con-exp-no-emphasis": 4,
+        "walk-straight-more": 4
+    },
+    "videos": 7
+}

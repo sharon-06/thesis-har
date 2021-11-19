@@ -106,3 +106,18 @@ dmypy.json
 data/*
 demos_local/*
 work_dir/*
+
+# Environments
+.python-version
+
+# VSCode
+.vscode/*
+
+# MlFlow
+mlruns*
+
+# checkpoints
+automation/checkpoints/*
+
+# cache
+__pycache__/

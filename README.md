@@ -13,7 +13,7 @@ The five main research questions:
 For the details checkout the presentation or the thesis document.
 
 
-**This work was based on: **
+
 <div align="center">
   <img src="https://github.com/open-mmlab/mmaction2/raw/master/resources/mmaction2_logo.png" width="500"/>
 </div>

@@ -1,0 +1,3 @@
+[submodule "human-action-recognition"]
+	path = human-action-recognition
+	url = https://git.wizai.com/research/vortanz/human-action-recognition

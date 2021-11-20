@@ -101,6 +101,7 @@ dmypy.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+human-action-recognition/.vscode
 
 # data, demos, work dir
 data/*

@@ -26,7 +26,7 @@ It is a part of the [OpenMMLab](http://openmmlab.org/) project. The master branc
     <p style="font-size:1.5vw;">Action Recognition results on the BAST dataset</p>
   </div>
   <div style="float:right;margin-right:0px;">
-  <img src="https://github.com/rlleshi/thesis-har/blob/master/resources/bast_eval.gif" width="380px"><br>
+  <img src="https://github.com/rlleshi/thesis-har/blob/master/resources/gradcam.gif" width="380px"><br>
     <p style="font-size:1.5vw;">GradCAM results on SlowOnly trained without background</p>
   </div>
 </div>

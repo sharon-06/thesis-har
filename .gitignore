@@ -122,3 +122,6 @@ automation/checkpoints/*
 
 # cache
 __pycache__/
+
+# mim
+mmaction/.mim

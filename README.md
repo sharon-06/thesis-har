@@ -10,7 +10,7 @@ The five main research questions that this work tackles:
 4. Benefits of transfer learning in the models' performance
 5. Influence of background in the models' decisions
 
-For the details checkout the [presentation](https://github.com/rlleshi/thesis-har/blob/master/thesis/Video_Based_Human_Action_Recognition_Using_Deep_Learning), or you can checkout the [thesis]().
+For the details checkout the [presentation](), or you can checkout the [thesis](https://github.com/rlleshi/thesis-har/blob/master/thesis/Video_Based_Human_Action_Recognition_Using_Deep_Learning.pdf).
 
 
 <div align="center">
